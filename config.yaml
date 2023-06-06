@@ -1,0 +1,30 @@
+video:
+    # Camara integrada
+    fuente: 0
+
+modelo:
+    # resolucion puede ser {608, 512, 384}
+    resolucion_detector: 608
+
+    # Objectness/Score de yolo
+    confianza_detector: 0.8
+
+    # Modelos OCR
+
+    numero_modelo_ocr: 1
+
+    # Se queda solo con aquellas patentes
+    # cuyo promedio de las probabilidades de
+    # los caracteres es mayor a 0.4
+    confianza_avg_ocr: 0.7
+
+    # Si algun caracter esta por debajo de
+    # confianza_low_ocr, se descarta
+    confianza_low_ocr: 0.5
+
+    # aviso en caso de encontrar o no encontrar patente dentro del csv
+    #True aviso que la petente localizada se encuentra en el listado
+    #False aviso que la patente localizada no se encuentra en el listado
+    patente_en_csv: False
+
+

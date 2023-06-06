@@ -1,0 +1,1 @@
+71s 421ms/step - loss: 1.3265 - cat_acc: 0.9904 - plate_acc: 0.9522 - top_3_k: 0.9962

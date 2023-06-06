@@ -1,0 +1,9 @@
+opencv-python==4.5.5.64
+PyYAML==5.3.1
+tensorflow==2.10.0
+twilio==7.16.5
+boto3==1.26.95
+pandas
+numpy
+pytesseract
+python-dotenv
