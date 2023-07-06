@@ -25,6 +25,9 @@ modelo:
     # aviso en caso de encontrar o no encontrar patente dentro del csv
     #True aviso que la petente localizada se encuentra en el listado
     #False aviso que la patente localizada no se encuentra en el listado
-    patente_en_csv: False
+    patente_en_csv: True
+
+    ##Envio de alerta via whatsapp
+    whatsapp: False
 
 

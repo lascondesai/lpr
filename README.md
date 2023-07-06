@@ -59,6 +59,9 @@ modelo:
 
     # Si algún carácter esta por debajo deconfianza_low_ocr, se descarta
     confianza_low_ocr: 0.5
+
+    ##Envio de alerta via whatsapp (Opcional)
+    whatsapp: False
 ```
 
  Las patentes que cumplan este umbral quedarán registradas en la carpeta /tmp .
@@ -83,3 +86,22 @@ Este proyecto se crea a partir de [github](https://github.com/ankandrew/ConvALPR
 
 | ![Imagen 1](test/BJYH59.png) | ![Imagen 2](test/HPHL25.png) |
 | ![Imagen 3](test/GDRC33.png) | ![Imagen 4](test/HPJV53.png) |
+
+
+# WhatsApp (Opcional)
+Para utilizar el servicio de Twilio, que nos permitirá enviar mensajes de WhatsApp, necesitarás obtener las siguientes credenciales de Twilio:
+
+```
+whastapp_account_sid    = ''
+whastapp_auth_token     = ''
+```
+
+
+Además de las credenciales de Twilio, también necesitarás configurar los números de WhatsApp que se utilizarán en el sistema:
+
+```
+whatsapp_number         = ''
+whatsapp_number_twilio  = ''
+```
+
+Donde whatsapp_number es el número que recibirá el mensaje y whatsapp_number_twilio el número por el cual se envía desde la plataforma de Twilio.

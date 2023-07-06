@@ -22,6 +22,8 @@ logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
 from twilio.rest import Client
 from dotenv import load_dotenv
+load_dotenv()
+
 
 
 def whatsapp_alert( msj=''):
@@ -98,7 +100,9 @@ def main_demo(cfg, demo=True, benchmark=True, save_vid=False):
             if patente_actual in encargos_list :
                 print('****** PATENTE CON ENCARGO *********')
                 print('****** '+patente_actual+' *********')
-                whatsapp_alert('Patente con encargo :'+patente_actual)
+
+                if(cfg['modelo']['whatsapp']):
+                    whatsapp_alert('Patente con encargo : '+patente_actual)
         
         else:
             if patente_actual not in encargos_list :
