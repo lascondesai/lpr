@@ -24,6 +24,25 @@ from twilio.rest import Client
 from dotenv import load_dotenv
 
 
+def whatsapp_alert( msj=''):
+
+    if msj =='':
+        return False
+    
+    to_          = os.getenv('whatsapp_number')
+    from_        = os.getenv('whatsapp_number_twilio')
+    
+    account_sid = os.getenv('whastapp_account_sid')
+    auth_token  = os.getenv('whastapp_auth_token')
+    
+
+    client_twilio = Client(account_sid, auth_token)
+    message             = client_twilio.messages.create(
+            body        = msj,
+            from_       = f'whatsapp:{from_}', # Número de Twilio para enviar mensajes de WhatsApp
+            to          = f'whatsapp:{to_}'
+        )
+    
 
 def main_demo(cfg, demo=True, benchmark=True, save_vid=False):
 
@@ -79,6 +98,7 @@ def main_demo(cfg, demo=True, benchmark=True, save_vid=False):
             if patente_actual in encargos_list :
                 print('****** PATENTE CON ENCARGO *********')
                 print('****** '+patente_actual+' *********')
+                whatsapp_alert('Patente con encargo :'+patente_actual)
         
         else:
             if patente_actual not in encargos_list :
@@ -87,7 +107,6 @@ def main_demo(cfg, demo=True, benchmark=True, save_vid=False):
         
         if len(patentes_detectadas) > max_patentes:
             patentes_detectadas.popitem(last=False)  # Elimina la primera patente ingresada
-        
 
     
 
